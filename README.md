@@ -15,4 +15,6 @@ Week 12 Completion:
 
 Week 12 Completion:
   Mahtahc 3/28/25
-- etc
+- Added 2 enemies
+- Editing player script to fine tune border teleportation.
+- Adjusted Game Manager
