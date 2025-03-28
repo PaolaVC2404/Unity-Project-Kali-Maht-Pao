@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    private float horizontalScreenLimit = 9.5f;
+    private float horizontalScreenLimit = 20f;
     private float verticalScreenLimit = 6.5f;
 
     public GameObject bulletPrefab;
@@ -51,12 +51,12 @@ public class Player : MonoBehaviour
         //Move the player
         transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * playerSpeed);
         //Player leaves the screen horizontally
-        if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
+        if(transform.position.x > horizontalScreenLimit || transform.position.x < -horizontalScreenLimit)
         {
             transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
         }
         //Player leaves the screen vertically
-        if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
+        if(transform.position.y > verticalScreenLimit || transform.position.y < -verticalScreenLimit)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
