@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public GameObject EnemyOnePrefab;
     public GameObject EnemyTwoPrefab;
     public GameObject EnemyThreePrefab;
 
@@ -13,7 +14,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("CreateEnemyThree", 1, 2);
-        InvokeRepeating("CreateEnemyTwo", 1, 2);
+        InvokeRepeating("CreateEnemyTwo", 1, 6);
+        InvokeRepeating("CreateEnemyOne", 1, 4);
     }
 
     // Update is called once per frame
@@ -29,5 +31,9 @@ public class GameManager : MonoBehaviour
     void CreateEnemyTwo()
     {
         Instantiate(EnemyTwoPrefab, new Vector3(UnityEngine.Random.Range(-9f, 9f), 6.5f, 0), Quaternion.identity);
+    }
+    void CreateEnemyOne()
+    {
+        Instantiate(EnemyOnePrefab, new Vector3(UnityEngine.Random.Range(-6f, 6f), 6.5f, 0), Quaternion.identity);
     }
 }
