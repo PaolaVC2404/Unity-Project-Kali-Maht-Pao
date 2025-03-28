@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
+
 {
     //how to define a variable
     //1. access modifier: public or private
@@ -15,7 +16,9 @@ public class Player : MonoBehaviour
     private float verticalInput;
 
     private float horizontalScreenLimit = 8.5f;
-    private float verticalScreenLimit = 4.5f;
+    private float verticalScreenLimit = -0.4f;
+
+
 
     public GameObject bulletPrefab;
 
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
         }
         //Player leaves the screen vertically
-        if(transform.position.y > verticalScreenLimit || transform.position.y < -verticalScreenLimit)
+        if(transform.position.y > -0.4f || transform.position.y < -4.5f)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
