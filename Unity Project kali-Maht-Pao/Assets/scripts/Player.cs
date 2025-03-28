@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    private float horizontalScreenLimit = 20f;
-    private float verticalScreenLimit = 6.5f;
+    private float horizontalScreenLimit = 8.5f;
+    private float verticalScreenLimit = 4.5f;
 
     public GameObject bulletPrefab;
 
