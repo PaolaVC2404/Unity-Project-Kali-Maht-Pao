@@ -22,7 +22,7 @@ public class EnemyThree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(-2, -3, 0) * Time.deltaTime * 3f);
+        transform.Translate(new Vector3(-2, -5, 0) * Time.deltaTime * 3f);
 
         if (transform.position.y < -6.5f)
         {
