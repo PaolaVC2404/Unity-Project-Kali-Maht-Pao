@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     private float verticalInput;
 
     private float horizontalScreenLimit = 8.5f;
-    private float verticalScreenLimit = -0.4f;
 
 
 
@@ -48,20 +47,22 @@ public class Player : MonoBehaviour
 
     void Movement()
     {
-        //Read the input from the player
+        // Read the input from the player
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        //Move the player
+
+        // Move the player horizontally and vertically
         transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * playerSpeed);
-        //Player leaves the screen horizontally
-        if(transform.position.x > horizontalScreenLimit || transform.position.x < -horizontalScreenLimit)
+
+        // Player leaves the screen horizontally
+        if (transform.position.x > horizontalScreenLimit || transform.position.x < -horizontalScreenLimit)
         {
             transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
         }
-        //Player leaves the screen vertically
-        if(transform.position.y > -0.4f || transform.position.y < -4.5f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
-        }
+
+        // Player reaches the middle of the screen vertically (prevent going past the middle)
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.y = Mathf.Clamp(pos.y, 0.0f, 0.5f); // Clamp to the middle of the screen and above
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 }
