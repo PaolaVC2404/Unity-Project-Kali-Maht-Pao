@@ -4,7 +4,7 @@ Week 12 Completion:
   Paola 3/27/25
 - Modified Player.css
 - Created Bullet.css
-- etc
+- Created Bullet Prefab
 
 Week 12 Completion:
    Kali 3/28/25
